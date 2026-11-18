@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULLET TIME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-top-left">
+                <div class="hud-box">
+                    <span class="hud-label">WAVE</span>
+                    <span id="hud-wave" class="hud-value">1</span>
+                </div>
+                <div class="hud-box">
+                    <span class="hud-label">SCORE</span>
+                    <span id="hud-score" class="hud-value">000000</span>
+                </div>
+            </div>
+
+            <div class="hud-top-right">
+                <div class="hud-box align-right">
+                    <span class="hud-label">KILLS</span>
+                    <span id="hud-kills" class="hud-value">0</span>
+                </div>
+                <div class="hud-box align-right">
+                    <span class="hud-label">COMBO</span>
+                    <span id="hud-combo" class="hud-value highlight">x1</span>
+                </div>
+            </div>
+
+            <div class="hud-bottom">
+                <div class="bar-container">
+                    <div class="bar-label">HP</div>
+                    <div class="bar-outer">
+                        <div id="hp-bar" class="bar-inner hp-fill"></div>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label">TIME ENERGY</div>
+                    <div class="bar-outer">
+                        <div id="energy-bar" class="bar-inner energy-fill"></div>
+                    </div>
+                </div>
+                <div id="bt-status" class="bt-status-text">BULLET TIME READY</div>
+            </div>
+
+            <div class="xp-container">
+                <div id="xp-bar" class="xp-fill"></div>
+            </div>
+        </div>
+
+        <!-- START SCREEN -->
+        <div id="start-screen" class="overlay active">
+            <h1 class="glitch-title">BULLET<br><span>TIME</span></h1>
+            <p class="subtitle">TIME IS YOUR WEAPON</p>
+            <div class="best-score-tag">BEST SCORE: <span id="start-best-score">0</span></div>
+            <button id="btn-start" class="cyber-btn">START GAME</button>
+            <div class="controls-guide">
+                <div><span>WASD</span> MOVE</div>
+                <div><span>MOUSE</span> AIM</div>
+                <div><span>LMB</span> SHOOT</div>
+                <div><span>SPACE</span> BULLET TIME</div>
+                <div><span>SHIFT</span> DASH</div>
+                <div><span>ESC</span> PAUSE</div>
+            </div>
+        </div>
+
+        <!-- PAUSE SCREEN -->
+        <div id="pause-screen" class="overlay hidden">
+            <h2>PAUSED</h2>
+            <button id="btn-resume" class="cyber-btn">RESUME</button>
+        </div>
+
+        <!-- LEVEL UP SCREEN -->
+        <div id="levelup-screen" class="overlay hidden">
+            <h2 class="level-title">LEVEL UP!</h2>
+            <p class="level-subtitle">CHOOSE YOUR UPGRADE</p>
+            <div id="upgrade-cards" class="cards-container"></div>
+        </div>
+
+        <!-- GAME OVER SCREEN -->
+        <div id="gameover-screen" class="overlay hidden">
+            <h1 class="danger-title">TIME HAS ENDED</h1>
+            <div class="stats-summary">
+                <div class="stat-row"><span>FINAL SCORE:</span> <span id="go-score">0</span></div>
+                <div class="stat-row"><span>BEST SCORE:</span> <span id="go-best">0</span></div>
+                <div class="stat-row"><span>WAVES SURVIVED:</span> <span id="go-wave">0</span></div>
+                <div class="stat-row"><span>TOTAL KILLS:</span> <span id="go-kills">0</span></div>
+                <div class="stat-row"><span>MAX COMBO:</span> <span id="go-combo">x1</span></div>
+            </div>
+            <button id="btn-restart" class="cyber-btn">TRY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
